@@ -16,6 +16,9 @@
 		BC6C3A6C26BB718600840001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6C3A6A26BB718600840001 /* LaunchScreen.storyboard */; };
 		BC6C3A7726BB718700840001 /* wchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A7626BB718700840001 /* wchallengeTests.swift */; };
 		BC6C3A8226BB718700840001 /* wchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A8126BB718700840001 /* wchallengeUITests.swift */; };
+		BC6C3A9226BB744000840001 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9126BB744000840001 /* Network.swift */; };
+		BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9726BB74D900840001 /* LogInService.swift */; };
+		BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9926BB767A00840001 /* LogInModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		BC6C3A7D26BB718700840001 /* wchallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wchallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6C3A8126BB718700840001 /* wchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wchallengeUITests.swift; sourceTree = "<group>"; };
 		BC6C3A8326BB718700840001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6C3A9126BB744000840001 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		BC6C3A9726BB74D900840001 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
+		BC6C3A9926BB767A00840001 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,8 @@
 		BC6C3A5B26BB718300840001 /* wchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				BC6C3A9026BB742600840001 /* Network */,
+				BC6C3A8F26BB73A900840001 /* LogIn */,
 				BC6C3A5C26BB718300840001 /* AppDelegate.swift */,
 				BC6C3A5E26BB718300840001 /* SceneDelegate.swift */,
 				BC6C3A6026BB718300840001 /* ViewController.swift */,
@@ -129,6 +137,55 @@
 				BC6C3A8326BB718700840001 /* Info.plist */,
 			);
 			path = wchallengeUITests;
+			sourceTree = "<group>";
+		};
+		BC6C3A8F26BB73A900840001 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				BC6C3A9626BB74BA00840001 /* Service */,
+				BC6C3A9526BB74B300840001 /* ViewModel */,
+				BC6C3A9426BB74AC00840001 /* Model */,
+				BC6C3A9326BB74A700840001 /* UI */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		BC6C3A9026BB742600840001 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BC6C3A9126BB744000840001 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BC6C3A9326BB74A700840001 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BC6C3A9426BB74AC00840001 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC6C3A9926BB767A00840001 /* LogInModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC6C3A9526BB74B300840001 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC6C3A9626BB74BA00840001 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BC6C3A9726BB74D900840001 /* LogInService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6C3A9226BB744000840001 /* Network.swift in Sources */,
 				BC6C3A6126BB718300840001 /* ViewController.swift in Sources */,
 				BC6C3A6726BB718300840001 /* wchallenge.xcdatamodeld in Sources */,
 				BC6C3A5D26BB718300840001 /* AppDelegate.swift in Sources */,
+				BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */,
 				BC6C3A5F26BB718300840001 /* SceneDelegate.swift in Sources */,
+				BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
