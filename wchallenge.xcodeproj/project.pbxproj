@@ -3,13 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC486E5B26C391E80010EB0F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC486E5A26C391E80010EB0F /* Util.swift */; };
+		BC486E6226C3981D0010EB0F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC486E6126C3981D0010EB0F /* Home.storyboard */; };
+		BC486E6426C398330010EB0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC486E6326C398330010EB0F /* HomeViewController.swift */; };
+		BC489FE326C229F00094F140 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC489FDE26C229F00094F140 /* Quicksand-Bold.ttf */; };
+		BC489FE426C229F00094F140 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC489FDF26C229F00094F140 /* Quicksand-Light.ttf */; };
+		BC489FE526C229F00094F140 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC489FE026C229F00094F140 /* Quicksand-Medium.ttf */; };
+		BC489FE626C229F00094F140 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC489FE126C229F00094F140 /* Quicksand-Regular.ttf */; };
+		BC489FE726C229F00094F140 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC489FE226C229F00094F140 /* Quicksand-SemiBold.ttf */; };
+		BC489FEB26C22C700094F140 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC489FEA26C22C700094F140 /* UIComponents.swift */; };
+		BC489FED26C231750094F140 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC489FEC26C231750094F140 /* LoginViewController.swift */; };
+		BC489FF326C23CC10094F140 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC489FF226C23CC10094F140 /* IQKeyboardManagerSwift */; };
+		BC489FF626C23D0C0094F140 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC489FF526C23D0C0094F140 /* Kingfisher */; };
 		BC6C3A5D26BB718300840001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A5C26BB718300840001 /* AppDelegate.swift */; };
 		BC6C3A5F26BB718300840001 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A5E26BB718300840001 /* SceneDelegate.swift */; };
-		BC6C3A6126BB718300840001 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A6026BB718300840001 /* ViewController.swift */; };
 		BC6C3A6426BB718300840001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6C3A6226BB718300840001 /* Main.storyboard */; };
 		BC6C3A6726BB718300840001 /* wchallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A6526BB718300840001 /* wchallenge.xcdatamodeld */; };
 		BC6C3A6926BB718600840001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6C3A6826BB718600840001 /* Assets.xcassets */; };
@@ -19,10 +30,11 @@
 		BC6C3A9226BB744000840001 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9126BB744000840001 /* Network.swift */; };
 		BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9726BB74D900840001 /* LogInService.swift */; };
 		BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9926BB767A00840001 /* LogInModel.swift */; };
+		BCFB215B26C24663007FCDC8 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB215A26C24663007FCDC8 /* LogInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BC6C3A7326BB718700840001 /* PBXContainerItemProxy */ = {
+		BC489FFD26C2409B0094F140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BC6C3A5126BB718300840001 /* Project object */;
 			proxyType = 1;
@@ -39,10 +51,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC486E5A26C391E80010EB0F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BC486E6126C3981D0010EB0F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BC486E6326C398330010EB0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BC489FDE26C229F00094F140 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		BC489FDF26C229F00094F140 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		BC489FE026C229F00094F140 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		BC489FE126C229F00094F140 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		BC489FE226C229F00094F140 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		BC489FEA26C22C700094F140 /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
+		BC489FEC26C231750094F140 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC6C3A5926BB718300840001 /* wchallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wchallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6C3A5C26BB718300840001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6C3A5E26BB718300840001 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC6C3A6026BB718300840001 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC6C3A6326BB718300840001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC6C3A6626BB718300840001 /* wchallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wchallenge.xcdatamodel; sourceTree = "<group>"; };
 		BC6C3A6826BB718600840001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +78,7 @@
 		BC6C3A9126BB744000840001 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC6C3A9726BB74D900840001 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		BC6C3A9926BB767A00840001 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
+		BCFB215A26C24663007FCDC8 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC489FF626C23D0C0094F140 /* Kingfisher in Frameworks */,
+				BC489FF326C23CC10094F140 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +108,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC486E5C26C397E60010EB0F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC486E6026C398050010EB0F /* Service */,
+				BC486E5F26C397FF0010EB0F /* ViewModel */,
+				BC486E5E26C397FA0010EB0F /* Model */,
+				BC486E5D26C397F50010EB0F /* UI */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BC486E5D26C397F50010EB0F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BC486E6126C3981D0010EB0F /* Home.storyboard */,
+				BC486E6326C398330010EB0F /* HomeViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BC486E5E26C397FA0010EB0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC486E5F26C397FF0010EB0F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC486E6026C398050010EB0F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BC489FDC26C229F00094F140 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC489FDD26C229F00094F140 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BC489FDD26C229F00094F140 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BC489FDE26C229F00094F140 /* Quicksand-Bold.ttf */,
+				BC489FDF26C229F00094F140 /* Quicksand-Light.ttf */,
+				BC489FE026C229F00094F140 /* Quicksand-Medium.ttf */,
+				BC489FE126C229F00094F140 /* Quicksand-Regular.ttf */,
+				BC489FE226C229F00094F140 /* Quicksand-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BC489FE926C22C5D0094F140 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BC489FEA26C22C700094F140 /* UIComponents.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		BC6C3A5026BB718300840001 = {
 			isa = PBXGroup;
 			children = (
@@ -107,16 +200,19 @@
 		BC6C3A5B26BB718300840001 /* wchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				BC489FE926C22C5D0094F140 /* UI */,
+				BC489FDC26C229F00094F140 /* Resources */,
 				BC6C3A9026BB742600840001 /* Network */,
 				BC6C3A8F26BB73A900840001 /* LogIn */,
+				BC486E5C26C397E60010EB0F /* Home */,
 				BC6C3A5C26BB718300840001 /* AppDelegate.swift */,
 				BC6C3A5E26BB718300840001 /* SceneDelegate.swift */,
-				BC6C3A6026BB718300840001 /* ViewController.swift */,
 				BC6C3A6226BB718300840001 /* Main.storyboard */,
 				BC6C3A6826BB718600840001 /* Assets.xcassets */,
 				BC6C3A6A26BB718600840001 /* LaunchScreen.storyboard */,
 				BC6C3A6D26BB718600840001 /* Info.plist */,
 				BC6C3A6526BB718300840001 /* wchallenge.xcdatamodeld */,
+				BC486E5A26C391E80010EB0F /* Util.swift */,
 			);
 			path = wchallenge;
 			sourceTree = "<group>";
@@ -161,6 +257,7 @@
 		BC6C3A9326BB74A700840001 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BC489FEC26C231750094F140 /* LoginViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -176,6 +273,7 @@
 		BC6C3A9526BB74B300840001 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BCFB215A26C24663007FCDC8 /* LogInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,6 +302,10 @@
 			dependencies = (
 			);
 			name = wchallenge;
+			packageProductDependencies = (
+				BC489FF226C23CC10094F140 /* IQKeyboardManagerSwift */,
+				BC489FF526C23D0C0094F140 /* Kingfisher */,
+			);
 			productName = wchallenge;
 			productReference = BC6C3A5926BB718300840001 /* wchallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -219,7 +321,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BC6C3A7426BB718700840001 /* PBXTargetDependency */,
+				BC489FFE26C2409B0094F140 /* PBXTargetDependency */,
 			);
 			name = wchallengeTests;
 			productName = wchallengeTests;
@@ -275,6 +377,10 @@
 				Base,
 			);
 			mainGroup = BC6C3A5026BB718300840001;
+			packageReferences = (
+				BC489FF126C23CC10094F140 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				BC489FF426C23D0C0094F140 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = BC6C3A5A26BB718300840001 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,8 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6C3A6C26BB718600840001 /* LaunchScreen.storyboard in Resources */,
+				BC489FE726C229F00094F140 /* Quicksand-SemiBold.ttf in Resources */,
 				BC6C3A6926BB718600840001 /* Assets.xcassets in Resources */,
+				BC486E6226C3981D0010EB0F /* Home.storyboard in Resources */,
+				BC489FE626C229F00094F140 /* Quicksand-Regular.ttf in Resources */,
 				BC6C3A6426BB718300840001 /* Main.storyboard in Resources */,
+				BC489FE326C229F00094F140 /* Quicksand-Bold.ttf in Resources */,
+				BC489FE426C229F00094F140 /* Quicksand-Light.ttf in Resources */,
+				BC489FE526C229F00094F140 /* Quicksand-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,10 +431,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6C3A9226BB744000840001 /* Network.swift in Sources */,
-				BC6C3A6126BB718300840001 /* ViewController.swift in Sources */,
+				BC489FEB26C22C700094F140 /* UIComponents.swift in Sources */,
 				BC6C3A6726BB718300840001 /* wchallenge.xcdatamodeld in Sources */,
 				BC6C3A5D26BB718300840001 /* AppDelegate.swift in Sources */,
+				BCFB215B26C24663007FCDC8 /* LogInViewModel.swift in Sources */,
+				BC489FED26C231750094F140 /* LoginViewController.swift in Sources */,
 				BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */,
+				BC486E6426C398330010EB0F /* HomeViewController.swift in Sources */,
+				BC486E5B26C391E80010EB0F /* Util.swift in Sources */,
 				BC6C3A5F26BB718300840001 /* SceneDelegate.swift in Sources */,
 				BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */,
 			);
@@ -347,10 +463,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BC6C3A7426BB718700840001 /* PBXTargetDependency */ = {
+		BC489FFE26C2409B0094F140 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BC6C3A5826BB718300840001 /* wchallenge */;
-			targetProxy = BC6C3A7326BB718700840001 /* PBXContainerItemProxy */;
+			targetProxy = BC489FFD26C2409B0094F140 /* PBXContainerItemProxy */;
 		};
 		BC6C3A7F26BB718700840001 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -509,6 +625,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.diego.wchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -528,6 +645,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.diego.wchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -657,6 +775,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC489FF126C23CC10094F140 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+		BC489FF426C23D0C0094F140 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC489FF226C23CC10094F140 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC489FF126C23CC10094F140 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		BC489FF526C23D0C0094F140 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC489FF426C23D0C0094F140 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BC6C3A6526BB718300840001 /* wchallenge.xcdatamodeld */ = {

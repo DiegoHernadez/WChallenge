@@ -30,7 +30,7 @@ extension LoginEnpoint: RequestBuilder {
     var urlRequest: URLRequest {
         switch self {
         case let .makeLogIn(request):
-            guard let url = URL(string: "\(APIBaseUrl)/sign_in") else {
+            guard let url = URL(string: "\(APIBaseUrl)/signin") else {
                 preconditionFailure("Invalid URL format")
             }
             var req = URLRequest(url: url)
