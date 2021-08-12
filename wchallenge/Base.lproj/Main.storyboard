@@ -181,11 +181,6 @@
                             <constraint firstItem="Ob4-Vp-Aip" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1.01932" id="cqn-kf-rEB"/>
                             <constraint firstAttribute="bottom" secondItem="2ya-ex-eBJ" secondAttribute="bottom" id="wzb-tM-v18"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="At4-Cs-n5j"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bfq-1G-ETF"/>
                     <connections>

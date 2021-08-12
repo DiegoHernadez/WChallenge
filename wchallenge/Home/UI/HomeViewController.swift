@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var viewNavBar: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var stackSearchBar: UIStackView!
+    @IBOutlet weak var constraintTopBar: NSLayoutConstraint!
     
     
     var model: HomeViewModel!
@@ -70,11 +71,17 @@ class HomeViewController: UIViewController {
     }
     
     func showNavBar(){
-        viewNavBar.isHidden = false
-        stackNavBar.isHidden = false
-        searchBar.isHidden = true
+        searchBar.endEditing(true)
         searchBar.text = ""
         filteredData = listBooks
+        constraintTopBar.constant = 0
+        stackNavBar.setNeedsUpdateConstraints()
+        UIView.animate(withDuration: 0.40, animations: { [weak self] in
+            self?.viewNavBar.isHidden = false
+            self?.stackNavBar.isHidden = false
+            self?.searchBar.isHidden = true
+            self?.stackNavBar.layoutIfNeeded()
+        })
         tableView.reloadData()
     }
     
@@ -94,9 +101,15 @@ class HomeViewController: UIViewController {
     }
     
     @objc func onSearch(tapGestureRecognizer: UITapGestureRecognizer){
-        viewNavBar.isHidden = true
-        stackNavBar.isHidden = true
-        searchBar.isHidden = false
+        constraintTopBar.constant = 40
+        stackNavBar.setNeedsUpdateConstraints()
+
+        UIView.animate(withDuration: 0.40, animations: { [weak self] in
+            self?.viewNavBar.isHidden = true
+            self?.stackNavBar.isHidden = true
+            self?.searchBar.isHidden = false
+            self?.stackNavBar.layoutIfNeeded()
+        })
     }
 }
 
@@ -106,6 +119,7 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vcFactory = WViewControllerFactory()
         if !(filteredData.isEmpty) {
+            searchBar.endEditing(true)
             let book = filteredData[indexPath.row]
             let vc = vcFactory.createDetailVC(service: model.service, book: book)
             self.navigationController?.pushViewController(vc, animated: true)

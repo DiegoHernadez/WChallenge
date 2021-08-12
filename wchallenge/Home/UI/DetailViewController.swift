@@ -24,9 +24,11 @@ class DetailViewController: UIViewController {
     
     var model: DetailViewModel!
     
+    private var suggestions: [Book] = []
     private var comments: [Comment] = []
     private var isLoading: Bool = false
     private var commentsPub: AnyCancellable?
+    private var suggestionsPub: AnyCancellable?
     private var loadingPub: AnyCancellable?
 
     override func viewDidLoad() {
@@ -36,10 +38,16 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         model.getComments()
+        model.getSuggestions()
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backAction(tapGestureRecognizer:)))
         imageBack.isUserInteractionEnabled = true
         imageBack.addGestureRecognizer(tapGestureRecognizer)
+        
+        suggestionsPub = model.$listSuggestions.sink(receiveValue: { [weak self] restultBooks in
+            self?.suggestions = restultBooks
+            self?.tableView.reloadData()
+        })
         
         commentsPub = model.$listComments.sink(receiveValue: { [weak self] resultComments in
             self?.comments = resultComments
@@ -75,14 +83,20 @@ extension DetailViewController: UITableViewDataSource{
         if isLoading {
             return 1
         }
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 || isLoading{
             return 1
         }
-        return comments.count
+        if section == 1{
+            return suggestions.count
+        }
+        if section == 2{
+            return comments.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,7 +112,7 @@ extension DetailViewController: UITableViewDataSource{
         }
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellHeader", for: indexPath) as! CellHeader
-            cell.cardView.layer.cornerRadius = 10
+            cell.cardView.layer.cornerRadius = 5
             cell.cardView.clipsToBounds = true
             cell.titleBook.text = "\(model.book.title ?? "")"
             cell.authorBook.text = "\(model.book.author ?? "")"
@@ -113,9 +127,23 @@ extension DetailViewController: UITableViewDataSource{
             return cell
         }
         if indexPath.section == 1{
+            let book = suggestions[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellBook", for: indexPath) as! CellBook
+            cell.cardView.layer.cornerRadius = 5
+            cell.cardView.clipsToBounds = true
+            cell.titleBook.text = "\(book.title ?? "")"
+            cell.subTitleBook.text = "\(book.author ?? "")"
+            let url = URL(string: book.image ?? "")
+            cell.imageBook.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "default_image")
+            )
+            return cell
+        }
+        if indexPath.section == 2{
             let comment = comments[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CellBook
-            cell.cardView.layer.cornerRadius = 10
+            cell.cardView.layer.cornerRadius = 5
             cell.cardView.clipsToBounds = true
             cell.titleBook.text = "\(comment.user?.username ?? "")"
             cell.subTitleBook.text = "\(comment.content ?? "")"
@@ -129,5 +157,28 @@ extension DetailViewController: UITableViewDataSource{
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "subTitleCell") as! CellBook
+        headerCell.frame = headerView.bounds
+        if section == 0{
+            return nil
+        }
+        if section == 1{
+            headerCell.titleBook.text = "Suggestions"
+        }else if section == 2{
+            headerCell.titleBook.text  = "Comments"
+        }
+        headerView.addSubview(headerCell)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 0
+        }
+        return 50
     }
 }

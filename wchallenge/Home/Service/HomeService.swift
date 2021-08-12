@@ -11,11 +11,13 @@ import Combine
 protocol HomeService {
     func requestBooks() -> AnyPublisher<[Book], Error>
     func requestComments(bookId: Int) -> AnyPublisher<[Comment], Error>
+    func requestSuggestions(bookId: Int) -> AnyPublisher<[Book], Error>
 }
 
 fileprivate enum HomeEnpoint {
     case requestBooks
     case requestComments(bookId: Int)
+    case requestSuggestions(bookId: Int)
 }
 
 extension HomeEnpoint: RequestBuilder {
@@ -26,6 +28,8 @@ extension HomeEnpoint: RequestBuilder {
             return 1
         case .requestComments(_):
             return 2
+        case .requestSuggestions(_):
+            return 3
         }
     }
     
@@ -49,6 +53,15 @@ extension HomeEnpoint: RequestBuilder {
             req.addValue("application/json", forHTTPHeaderField: "content-type")
             req.httpMethod = "GET"
             return req
+        case let .requestSuggestions(bookId):
+            guard let url = URL(string: "\(APIBaseUrl)/books/\(bookId)/suggestions") else {
+                preconditionFailure("Invalid URL format")
+            }
+            var req = URLRequest(url: url)
+            req.addValue("application/json", forHTTPHeaderField: "accept")
+            req.addValue("application/json", forHTTPHeaderField: "content-type")
+            req.httpMethod = "GET"
+            return req
         }
     }
 }
@@ -65,6 +78,12 @@ struct HomeApiService: HomeService {
     
     func requestComments(bookId: Int) -> AnyPublisher<[Comment], Error> {
         apiSession.request(with: HomeEnpoint.requestComments(bookId: bookId))
+            .mapError { $0 }
+            .eraseToAnyPublisher()
+    }
+    
+    func requestSuggestions(bookId: Int) -> AnyPublisher<[Book], Error> {
+        apiSession.request(with: HomeEnpoint.requestSuggestions(bookId: bookId))
             .mapError { $0 }
             .eraseToAnyPublisher()
     }
