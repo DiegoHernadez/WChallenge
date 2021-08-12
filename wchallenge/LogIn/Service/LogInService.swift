@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-let APIBaseUrl = "https://private-59a7d9-iostrainingapi.apiary-mock.com"
-
 protocol LogInService {
     func makeLogIn(request: RequestLogin) -> AnyPublisher<ResponseLogin, Error>
 }

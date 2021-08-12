@@ -68,7 +68,7 @@ class LogInViewModel: ObservableObject {
                 self?.alert = AlertViewModel(show: true, title: "", message: response.message ?? "", firstAction: AlertViewModel.Action(title: "Aceptar", handler: { [weak self] in
                     self?.loginSucces = true
                     let defaults = UserDefaults()
-                    defaults.setValue(true, forKey: "login")
+                    defaults.setValue(true, forKey: keyForLogin)
                 }))
             }
     }

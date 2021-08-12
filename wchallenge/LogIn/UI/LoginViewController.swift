@@ -8,6 +8,14 @@
 import UIKit
 import Combine
 
+extension WViewControllerFactory {
+    func createLoginVC() -> LoginViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        return vc
+    }
+}
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldName: WTextField!
     @IBOutlet weak var textFieldLasName: WTextField!
@@ -27,6 +35,11 @@ class LoginViewController: UIViewController {
     private var cancellableShowLoader: AnyCancellable?
     private var cancellableAlert: AnyCancellable?
     private var cancellableLogin: AnyCancellable?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +89,11 @@ class LoginViewController: UIViewController {
             }
         })
         
-        cancellableLogin = model.$loginSucces.sink(receiveValue: { [weak self] success in
+        cancellableLogin = model.$loginSucces.sink(receiveValue: { success in
             if success{
-                let vc = WViewControllerFactory().createHomeVC()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let vc = UINavigationController(rootViewController: WViewControllerFactory().createHomeVC())
+                UIApplication.shared.windows.first?.rootViewController = vc
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
             }
         })
     }

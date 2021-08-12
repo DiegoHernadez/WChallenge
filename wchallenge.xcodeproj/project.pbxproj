@@ -30,6 +30,13 @@
 		BC6C3A9226BB744000840001 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9126BB744000840001 /* Network.swift */; };
 		BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9726BB74D900840001 /* LogInService.swift */; };
 		BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6C3A9926BB767A00840001 /* LogInModel.swift */; };
+		BC6E95F026C4909C001FA325 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95EF26C4909C001FA325 /* HomeService.swift */; };
+		BC6E95F226C490D3001FA325 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95F126C490D3001FA325 /* HomeModel.swift */; };
+		BC6E95F426C491A7001FA325 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95F326C491A7001FA325 /* HomeViewModel.swift */; };
+		BC6E95F626C4C32A001FA325 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95F526C4C32A001FA325 /* SettingsViewController.swift */; };
+		BC6E95F826C4C33B001FA325 /* WhishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95F726C4C33B001FA325 /* WhishListViewController.swift */; };
+		BC6E95FC26C4D476001FA325 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95FB26C4D476001FA325 /* DetailViewController.swift */; };
+		BC6E95FE26C4D4B1001FA325 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E95FD26C4D4B1001FA325 /* DetailViewModel.swift */; };
 		BCFB215B26C24663007FCDC8 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB215A26C24663007FCDC8 /* LogInViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +85,13 @@
 		BC6C3A9126BB744000840001 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC6C3A9726BB74D900840001 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
 		BC6C3A9926BB767A00840001 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
+		BC6E95EF26C4909C001FA325 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		BC6E95F126C490D3001FA325 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		BC6E95F326C491A7001FA325 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BC6E95F526C4C32A001FA325 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BC6E95F726C4C33B001FA325 /* WhishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhishListViewController.swift; sourceTree = "<group>"; };
+		BC6E95FB26C4D476001FA325 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BC6E95FD26C4D4B1001FA325 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		BCFB215A26C24663007FCDC8 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +138,9 @@
 			children = (
 				BC486E6126C3981D0010EB0F /* Home.storyboard */,
 				BC486E6326C398330010EB0F /* HomeViewController.swift */,
+				BC6E95F526C4C32A001FA325 /* SettingsViewController.swift */,
+				BC6E95F726C4C33B001FA325 /* WhishListViewController.swift */,
+				BC6E95FB26C4D476001FA325 /* DetailViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -131,6 +148,7 @@
 		BC486E5E26C397FA0010EB0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC6E95F126C490D3001FA325 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +156,8 @@
 		BC486E5F26C397FF0010EB0F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BC6E95F326C491A7001FA325 /* HomeViewModel.swift */,
+				BC6E95FD26C4D4B1001FA325 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -145,6 +165,7 @@
 		BC486E6026C398050010EB0F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BC6E95EF26C4909C001FA325 /* HomeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -431,13 +452,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6C3A9226BB744000840001 /* Network.swift in Sources */,
+				BC6E95FC26C4D476001FA325 /* DetailViewController.swift in Sources */,
 				BC489FEB26C22C700094F140 /* UIComponents.swift in Sources */,
 				BC6C3A6726BB718300840001 /* wchallenge.xcdatamodeld in Sources */,
 				BC6C3A5D26BB718300840001 /* AppDelegate.swift in Sources */,
 				BCFB215B26C24663007FCDC8 /* LogInViewModel.swift in Sources */,
 				BC489FED26C231750094F140 /* LoginViewController.swift in Sources */,
+				BC6E95F826C4C33B001FA325 /* WhishListViewController.swift in Sources */,
+				BC6E95F026C4909C001FA325 /* HomeService.swift in Sources */,
 				BC6C3A9A26BB767A00840001 /* LogInModel.swift in Sources */,
+				BC6E95F626C4C32A001FA325 /* SettingsViewController.swift in Sources */,
 				BC486E6426C398330010EB0F /* HomeViewController.swift in Sources */,
+				BC6E95F426C491A7001FA325 /* HomeViewModel.swift in Sources */,
+				BC6E95FE26C4D4B1001FA325 /* DetailViewModel.swift in Sources */,
+				BC6E95F226C490D3001FA325 /* HomeModel.swift in Sources */,
 				BC486E5B26C391E80010EB0F /* Util.swift in Sources */,
 				BC6C3A5F26BB718300840001 /* SceneDelegate.swift in Sources */,
 				BC6C3A9826BB74D900840001 /* LogInService.swift in Sources */,
