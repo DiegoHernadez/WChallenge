@@ -65,7 +65,7 @@ class DetailViewController: UIViewController {
     }
 
     @objc func backAction(tapGestureRecognizer: UITapGestureRecognizer) -> Void {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

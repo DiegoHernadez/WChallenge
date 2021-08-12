@@ -75,12 +75,11 @@ class HomeViewController: UIViewController {
         searchBar.text = ""
         filteredData = listBooks
         constraintTopBar.constant = 0
-        stackNavBar.setNeedsUpdateConstraints()
+        stackSearchBar.isHidden = true
+        searchBar.isHidden = true
         UIView.animate(withDuration: 0.40, animations: { [weak self] in
             self?.viewNavBar.isHidden = false
             self?.stackNavBar.isHidden = false
-            self?.searchBar.isHidden = true
-            self?.stackNavBar.layoutIfNeeded()
         })
         tableView.reloadData()
     }
@@ -90,25 +89,13 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func createTabBar(){
-        let tabBarVC = UITabBarController()
-        tabBarVC.setViewControllers([], animated: true)
-    }
-
-    @IBAction func action(_ sender: Any) {
-        let defaults = UserDefaults()
-        defaults.setValue(false, forKey: keyForLogin)
-    }
-    
     @objc func onSearch(tapGestureRecognizer: UITapGestureRecognizer){
         constraintTopBar.constant = 40
-        stackNavBar.setNeedsUpdateConstraints()
-
+        stackSearchBar.isHidden = false
+        searchBar.isHidden = false
         UIView.animate(withDuration: 0.40, animations: { [weak self] in
             self?.viewNavBar.isHidden = true
             self?.stackNavBar.isHidden = true
-            self?.searchBar.isHidden = false
-            self?.stackNavBar.layoutIfNeeded()
         })
     }
 }
@@ -122,7 +109,8 @@ extension HomeViewController: UITableViewDelegate{
             searchBar.endEditing(true)
             let book = filteredData[indexPath.row]
             let vc = vcFactory.createDetailVC(service: model.service, book: book)
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
